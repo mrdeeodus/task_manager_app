@@ -43,13 +43,15 @@ extension TasksViewController{
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath)
+		if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as? TaskCell{
+			
+			let task = taskManager.getTask(at: indexPath.row)
+			cell.task = task
+			
+			return cell
+		}
 		
-		let task = taskManager.getTask(at: indexPath.row)
-		cell.textLabel?.text = task.name
-		cell.detailTextLabel?.text = task.description
-		
-		return cell
+		return UITableViewCell.init()
 
 	}
 	
