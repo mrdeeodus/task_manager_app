@@ -21,12 +21,15 @@ final class TasksViewController: UITableViewController {
 
 	@IBAction func addNewTask(_ sender: Any) {
 		
-		taskManager.addRandomTask()
-//		let task_count = taskManager.taskCount
-//		let index_path = IndexPath(row: task_count - 1, section: 0)
-//		tableView.insertRows(at: [index_path], with: .automatic)
-		
-		tableView.reloadData()
+		let success = taskManager.addRandomTask()
+		if success{
+			
+			let task_count = taskManager.taskCount
+			let index_path = IndexPath(row: task_count - 1, section: 0)
+			tableView.insertRows(at: [index_path], with: .automatic)
+		}
+
+		//reloadRows function giving this error - Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'attempt to delete row 0 from section 0 which only contains 0 rows before the update'
 	}
 	
 }
