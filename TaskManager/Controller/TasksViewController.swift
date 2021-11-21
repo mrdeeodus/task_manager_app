@@ -86,7 +86,9 @@ extension TasksViewController{
 			let selectedTask = taskManager.getTask(at: selectedIndex.row)
 			
 			taskDetailsVC.task = selectedTask
+			taskDetailsVC.taskManager = self.taskManager
 		}
+		
 	}
 	
 }
