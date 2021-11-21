@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskDetailsViewController: UIViewController {
+final class TaskDetailsViewController: UIViewController {
 
 	@IBOutlet weak var taskNameLabel: UILabel!
 	@IBOutlet weak var taskDescLabel: UILabel!

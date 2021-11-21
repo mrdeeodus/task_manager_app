@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TasksCell: UITableViewCell {
+final class TasksCell: UITableViewCell {
 
 	@IBOutlet weak var taskNameLabel: UILabel!
 	@IBOutlet weak var taskDescLabel: UILabel!

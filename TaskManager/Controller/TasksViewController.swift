@@ -4,7 +4,6 @@
 
 import UIKit
 
-//1. why is it important to make class final
 final class TasksViewController: UITableViewController {
 	
 	let taskManager = TaskManager.init()
