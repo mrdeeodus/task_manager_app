@@ -34,8 +34,8 @@ class TaskManagerTests: XCTestCase {
 		//4. get task count
 		let taskCount = taskManager.taskCount
 		
-		//5. failing test, task added twice so asserting its equal to 2
-		XCTAssertEqual(taskCount, 2)
+		//5. task count should be equal to 1
+		XCTAssertEqual(taskCount, 1)
 		
 	}
 
