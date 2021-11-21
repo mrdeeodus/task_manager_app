@@ -9,14 +9,16 @@ final class TasksViewController: UITableViewController {
 
 	let cellIdentifer = "task_cell"
 	
-	//3. Why shouldnt taskmanager be initialised here
 	let taskManager = TaskManager.init()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//2. I'll like to know how to have a datasource that is not a self
+		//tableView.register(TaskCell.self, forCellReuseIdentifier: cellIdentifer)
+		
+		
 		tableView.dataSource = self
+		tableView.delegate = self
 	}
 
 	@IBAction func addNewTask(_ sender: Any) {
@@ -43,16 +45,18 @@ extension TasksViewController{
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as? TaskCell{
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer) as! TaskCell
 			
-			let task = taskManager.getTask(at: indexPath.row)
-			cell.task = task
-			
-			return cell
-		}
+		let task = taskManager.getTask(at: indexPath.row)
+		cell.task = task
 		
-		return UITableViewCell.init()
+		return cell
 
+	}
+	
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		
+		return 85
 	}
 	
 }
