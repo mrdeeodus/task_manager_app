@@ -14,6 +14,8 @@ final class TasksViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView.register(UINib.init(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: cellIdentifer)
+		
 		tableView.dataSource = self
 		tableView.delegate = self
 	}
@@ -42,7 +44,7 @@ extension TasksViewController{
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer) as! TaskCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer) as! TasksCell
 			
 		let task = taskManager.getTask(at: indexPath.row)
 		cell.task = task
@@ -57,11 +59,6 @@ extension TasksViewController{
 			
 			self.performSegue(withIdentifier: "taskDetails", sender: self)
 		}
-	}
-	
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		
-		return 85
 	}
 	
 }
