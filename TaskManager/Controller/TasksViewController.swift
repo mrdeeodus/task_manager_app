@@ -14,9 +14,6 @@ final class TasksViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//tableView.register(TaskCell.self, forCellReuseIdentifier: cellIdentifer)
-		
-		
 		tableView.dataSource = self
 		tableView.delegate = self
 	}
@@ -54,9 +51,32 @@ extension TasksViewController{
 
 	}
 	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		DispatchQueue.main.async {
+			
+			self.performSegue(withIdentifier: "taskDetails", sender: self)
+		}
+	}
+	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		
 		return 85
+	}
+	
+}
+
+extension TasksViewController{
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		if let taskDetailsVC = segue.destination as? TaskDetailsViewController{
+			
+			guard let selectedIndex = tableView.indexPathForSelectedRow else { return }
+			let selectedTask = taskManager.getTask(at: selectedIndex.row)
+			
+			taskDetailsVC.task = selectedTask
+		}
 	}
 	
 }

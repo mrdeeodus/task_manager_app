@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,10 +71,60 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="viN-gj-Yrs" kind="presentation" identifier="taskDetails" id="bWV-zt-qXb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5I-bH-gQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="931.88405797101461" y="99.776785714285708"/>
+        </scene>
+        <!--Task Details View Controller-->
+        <scene sceneID="3B9-P3-03q">
+            <objects>
+                <viewController id="viN-gj-Yrs" customClass="TaskDetailsViewController" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKq-Nx-iK8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ef1-CC-4o7">
+                                <rect key="frame" x="61" y="99" width="292" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="6e3-FY-49V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="B65-Xd-3oc">
+                                <rect key="frame" x="61" y="323" width="292" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="FbA-iP-WqM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GDc-NL-1oa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B65-Xd-3oc" firstAttribute="top" secondItem="Ef1-CC-4o7" secondAttribute="bottom" constant="8" symbolic="YES" id="B5U-8g-NAC"/>
+                            <constraint firstItem="B65-Xd-3oc" firstAttribute="leading" secondItem="GDc-NL-1oa" secondAttribute="leading" constant="61" id="DlU-OM-8pV"/>
+                            <constraint firstItem="Ef1-CC-4o7" firstAttribute="leading" secondItem="GDc-NL-1oa" secondAttribute="leading" constant="61" id="OKS-oP-6VN"/>
+                            <constraint firstItem="GDc-NL-1oa" firstAttribute="trailing" secondItem="Ef1-CC-4o7" secondAttribute="trailing" constant="61" id="gRL-Uj-Xsg"/>
+                            <constraint firstItem="GDc-NL-1oa" firstAttribute="trailing" secondItem="B65-Xd-3oc" secondAttribute="trailing" constant="61" id="vdT-b1-pOA"/>
+                            <constraint firstItem="Ef1-CC-4o7" firstAttribute="top" secondItem="GDc-NL-1oa" secondAttribute="top" constant="99" id="xam-mJ-qCg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskDescLabel" destination="B65-Xd-3oc" id="Bpe-Of-QWm"/>
+                        <outlet property="taskNameLabel" destination="Ef1-CC-4o7" id="Gwc-kw-UMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtV-HV-KJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766.6666666666667" y="99.776785714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2E-Ud-XZK">
