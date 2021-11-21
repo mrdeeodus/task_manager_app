@@ -10,31 +10,32 @@ import XCTest
 
 class TaskManagerTests: XCTestCase {
 
+	var taskManager: TaskManager!
+	var task: Task!
+	
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+		
+		taskManager = TaskManager.init()
+		task = Task.init(name: "Visit Friend", description: "See Ray on Monday")
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+		taskManager = nil
+		task = nil
     }
 
 	//failing test
 	func testSameTaskCannotSaveTwice(){
-		
-		//1. create taskManager
-		let taskManager = TaskManager.init()
 
-		//2. create a task
-		let task = Task.init(name: "Visit Friend", description: "See Ray on Monday")
-		
-		//3. add the task twice
+		//add the task twice
 		_ = taskManager.add(task: task)
 		_ = taskManager.add(task: task)
 		
-		//4. get task count
+		//get task count
 		let taskCount = taskManager.taskCount
 		
-		//5. task count should be equal to 1
+		//task count should be equal to 1
 		XCTAssertEqual(taskCount, 1)
 		
 	}
