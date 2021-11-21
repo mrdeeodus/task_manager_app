@@ -6,15 +6,13 @@ import UIKit
 
 //1. why is it important to make class final
 final class TasksViewController: UITableViewController {
-
-	let cellIdentifer = "task_cell"
 	
 	let taskManager = TaskManager.init()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		tableView.register(UINib.init(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: cellIdentifer)
+		tableView.register(UINib.init(nibName: Constants.Names.xibName, bundle: nil), forCellReuseIdentifier: Constants.Names.cellIdentifer)
 		
 		tableView.dataSource = self
 		tableView.delegate = self
@@ -44,7 +42,7 @@ extension TasksViewController{
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer) as! TasksCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Names.cellIdentifer) as! TasksCell
 			
 		let task = taskManager.getTask(at: indexPath.row)
 		cell.task = task
