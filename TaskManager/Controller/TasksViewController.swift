@@ -59,6 +59,21 @@ extension TasksViewController{
 		}
 	}
 	
+	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if editingStyle == .delete{
+			
+			let task = taskManager.getTask(at: indexPath.row)
+			taskManager.remove(task: task)
+			
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		}
+	}
+	
 }
 
 extension TasksViewController{
