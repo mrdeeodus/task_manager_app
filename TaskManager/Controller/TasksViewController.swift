@@ -6,10 +6,20 @@ import UIKit
 
 final class TasksViewController: UITableViewController {
 	
-	let taskManager = TaskManager.init()
+	let tasks = [Task]()
+	var taskManager: TaskManager!
+	let store = Store.init()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		if let storedTasks = store.fetchTasks(){
+			
+			taskManager = TaskManager.init(tasks: storedTasks)
+			tableView.reloadData()
+		}else{
+			taskManager = TaskManager.init(tasks: [])
+		}
 		
 		tableView.register(UINib.init(nibName: Constants.Names.xibName, bundle: nil), forCellReuseIdentifier: Constants.Names.cellIdentifer)
 		

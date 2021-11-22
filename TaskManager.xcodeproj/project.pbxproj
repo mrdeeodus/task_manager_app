@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0801765E274C059200DC2A65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801765D274C059200DC2A65 /* Store.swift */; };
 		0884636627482F4D00226320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0884636527482F4D00226320 /* AppDelegate.swift */; };
 		0884636827482F4D00226320 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0884636727482F4D00226320 /* SceneDelegate.swift */; };
 		0884636A27482F4D00226320 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0884636927482F4D00226320 /* TasksViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0801765D274C059200DC2A65 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0884636227482F4D00226320 /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0884636527482F4D00226320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0884636727482F4D00226320 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,11 +93,11 @@
 		0884636427482F4D00226320 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				0884636527482F4D00226320 /* AppDelegate.swift */,
 				08D16F8E274A2B72002D66C8 /* Constants.swift */,
 				0884637927482F6400226320 /* Model */,
 				0884637F274837FD00226320 /* View */,
 				0884637E27482F8B00226320 /* Controller */,
-				0884636527482F4D00226320 /* AppDelegate.swift */,
 				0884636727482F4D00226320 /* SceneDelegate.swift */,
 				0884636B27482F4D00226320 /* Main.storyboard */,
 				0884636E27482F4E00226320 /* Assets.xcassets */,
@@ -110,6 +112,7 @@
 			children = (
 				0884637A27482F7700226320 /* Task.swift */,
 				0884637C27482F8200226320 /* TaskManager.swift */,
+				0801765D274C059200DC2A65 /* Store.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				08D16F8C274A27B5002D66C8 /* TasksCell.swift in Sources */,
 				08D16F89274A2472002D66C8 /* TaskDetailsViewController.swift in Sources */,
 				0884637B27482F7700226320 /* Task.swift in Sources */,
+				0801765E274C059200DC2A65 /* Store.swift in Sources */,
 				0884636A27482F4D00226320 /* TasksViewController.swift in Sources */,
 				0884637D27482F8200226320 /* TaskManager.swift in Sources */,
 				0884636627482F4D00226320 /* AppDelegate.swift in Sources */,

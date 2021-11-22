@@ -6,14 +6,18 @@ import Foundation
 
 final class TaskManager{
 	
-	private var tasks = [Task]()
+	private var tasks: [Task]
+	private let store = Store()
+	
+	init(tasks: [Task]) {
+		
+		self.tasks = tasks
+	}
 	
 	var taskCount: Int{
 		
 		return tasks.count
 	}
-	
-	//should these functions throws error so that we can handle conditions better e.g no task to remove, task was previously added etc
 	
 	func getIndexOf(task: Task) -> Int?{
 		
@@ -27,6 +31,8 @@ final class TaskManager{
 		if !tasks.contains(task){
 			
 			tasks.append(task)
+			store.saveTasks(tasks)
+			
 			return true
 		}
 		

@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Task: Equatable{
+struct Task: Equatable, Codable{
 	
 	let name: String
 	let description: String
