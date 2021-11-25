@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task Details View Controller-->
+        <scene sceneID="yuv-fp-tfb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMZ-YG-1kW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="TaskDetailsViewController" id="nHz-Cm-P9f" customClass="TaskDetailsViewController" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jh-9K-vvd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OQD-qd-uw0">
+                                <rect key="frame" x="61" y="143" width="292" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="acr-UE-Dir"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kIA-2c-CAF">
+                                <rect key="frame" x="61" y="367" width="292" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="uXv-ei-oBI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-V5-pyq">
+                                <rect key="frame" x="88" y="726" width="238" height="62"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="DMl-qy-pRQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTask:" destination="nHz-Cm-P9f" eventType="touchUpInside" id="wVe-LV-6dl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fX4-W9-EFC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fX4-W9-EFC" firstAttribute="trailing" secondItem="OQD-qd-uw0" secondAttribute="trailing" constant="61" id="5ja-Rv-6XS"/>
+                            <constraint firstItem="fX4-W9-EFC" firstAttribute="bottom" secondItem="7Yb-V5-pyq" secondAttribute="bottom" constant="74" id="7oy-vd-SI3"/>
+                            <constraint firstItem="fX4-W9-EFC" firstAttribute="trailing" secondItem="7Yb-V5-pyq" secondAttribute="trailing" constant="88" id="OVc-nJ-8U8"/>
+                            <constraint firstItem="OQD-qd-uw0" firstAttribute="leading" secondItem="fX4-W9-EFC" secondAttribute="leading" constant="61" id="PQb-Nl-6aN"/>
+                            <constraint firstItem="kIA-2c-CAF" firstAttribute="top" secondItem="OQD-qd-uw0" secondAttribute="bottom" constant="8" symbolic="YES" id="bDS-pd-kqj"/>
+                            <constraint firstItem="7Yb-V5-pyq" firstAttribute="leading" secondItem="fX4-W9-EFC" secondAttribute="leading" constant="88" id="bpZ-OM-iz2"/>
+                            <constraint firstItem="fX4-W9-EFC" firstAttribute="trailing" secondItem="kIA-2c-CAF" secondAttribute="trailing" constant="61" id="bq8-yt-LfV"/>
+                            <constraint firstItem="OQD-qd-uw0" firstAttribute="top" secondItem="fX4-W9-EFC" secondAttribute="top" constant="99" id="c6J-Eo-3qg"/>
+                            <constraint firstItem="kIA-2c-CAF" firstAttribute="leading" secondItem="fX4-W9-EFC" secondAttribute="leading" constant="61" id="uYl-gG-kQU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskDescLabel" destination="kIA-2c-CAF" id="LrO-yl-QRt"/>
+                        <outlet property="taskNameLabel" destination="OQD-qd-uw0" id="RZR-1z-bhg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1426" y="-211"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
